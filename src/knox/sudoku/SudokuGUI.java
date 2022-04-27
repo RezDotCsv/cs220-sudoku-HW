@@ -331,6 +331,8 @@ public class SudokuGUI extends JFrame {
                 		
                 	}
         			pw.close();
+        			JOptionPane.showMessageDialog(null,
+                		    "Current game has been saved");
         		} catch (IOException e1) {
         			throw new RuntimeException(e1);
         		}
@@ -348,8 +350,7 @@ public class SudokuGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
             	 sudoku.load("easy2.txt");
-            	JOptionPane.showMessageDialog(null,
-            		    "Current game has been saved");
+            	
                 update();
             }
         });
@@ -440,7 +441,7 @@ public class SudokuGUI extends JFrame {
     				
     				
     			}
-    			JOptionPane.showMessageDialog(null, "No clue how this went, give me a sec");
+    			JOptionPane.showMessageDialog(null, "No clue how this went, probably poorly, give me a sec");
     			update();
     		}
     	});
@@ -578,6 +579,7 @@ public class SudokuGUI extends JFrame {
     
     public static void main(String[] args) {
         SudokuGUI g = new SudokuGUI();
+        
         g.setVisible(true);
     }
 
